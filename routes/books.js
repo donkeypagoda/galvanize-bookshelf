@@ -99,7 +99,6 @@ router.patch('/books/:id', (req, res, next) =>{
     })
     .returning(['id', 'title', 'author', 'genre', 'description', 'cover_url as coverUrl'])
     .then((books) => {
-      console.log(books)
       if (!books){
         return next(errHandle(404, "Not Found"));
       }
